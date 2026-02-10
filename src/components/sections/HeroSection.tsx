@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { Check, Play } from "lucide-react";
+import { Check } from "lucide-react";
 import { FaChevronDown } from "react-icons/fa";
 import {
   staggerContainer,
@@ -21,6 +21,13 @@ export function HeroSection() {
         top: targetPosition,
         behavior: "smooth",
       });
+    }
+  };
+
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.getElementById('waitlist');
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -64,9 +71,13 @@ export function HeroSection() {
               <Button size="lg" className="text-base">
                 Start free
               </Button>
-              <Button variant="outline" size="lg" className="text-base">
-                <Play className="size-4 mr-2" />
-                Watch demo
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-base"
+                onClick={scrollToWaitlist}
+              >
+                Join waitlist
               </Button>
             </motion.div>
 
