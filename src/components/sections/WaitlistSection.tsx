@@ -6,7 +6,7 @@ import { fadeIn, easeTransition, getAnimationConfig } from "@/lib/animations";
 
 export function WaitlistSection() {
   return (
-    <section className="py-24 px-4 bg-muted/30">
+    <section id="waitlist" className="py-24 px-4 bg-muted/30">
       <div className="container mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -15,7 +15,7 @@ export function WaitlistSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={easeTransition}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text leading-tight">
             Get early access to Continue AI
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
