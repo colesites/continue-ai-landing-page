@@ -1,5 +1,3 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
@@ -13,17 +11,13 @@ import { useCases } from "@/data/useCases";
 export default function Home() {
   return (
     <>
-      <Header />
-      <main className="min-h-screen">
-        <HeroSection />
-        <ProblemSection />
-        <FeaturesSection />
-        <UseCasesSection useCases={useCases} />
-        <PricingSection tiers={pricingTiers} />
-        <FAQSection />
-        <FinalCTA />
-      </main>
-      <Footer />
+      <HeroSection />
+      <ProblemSection />
+      <FeaturesSection />
+      <UseCasesSection useCases={useCases} />
+      <PricingSection tiers={pricingTiers} />
+      <FAQSection />
+      <FinalCTA />
     </>
   );
 }

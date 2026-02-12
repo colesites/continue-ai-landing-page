@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState } from "react";
+import type { SyntheticEvent } from "react";
 import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import { fadeIn, easeTransition, getAnimationConfig } from "@/lib/animations";
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const useCaseOptions = [
+  "Import chats and continue where I left off",
   "Coding / Debugging",
   "School / Research",
   "Content / Writing",
@@ -27,7 +29,7 @@ export function WaitlistForm() {
     return EMAIL_REGEX.test(email);
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
 
@@ -80,7 +82,7 @@ export function WaitlistForm() {
           You're on the list!
         </h3>
         <p className="text-muted-foreground">
-          We'll notify you when Kontinue AI launches. Early users get Pro perks!
+          We'll notify you when Kontinue AI launches.
         </p>
       </motion.div>
     );

@@ -16,10 +16,11 @@ function escapeHtml(value: string) {
 
 export async function POST(request: Request) {
   const resendApiKey = process.env.RESEND_API_KEY;
-  const notifyEmail = process.env.WAITLIST_NOTIFY_EMAIL;
-  const fromEmail = process.env.WAITLIST_FROM_EMAIL || "Kontinue AI <onboarding@resend.dev>";
+  const notifyEmail = process.env.WAITLIST_NOTIFY_EMAIL || "waitlist@kontinueai.com";
+  const fromEmail =
+    process.env.WAITLIST_FROM_EMAIL || "Kontinue AI <waitlist@kontinueai.com>";
 
-  if (!resendApiKey || !notifyEmail) {
+  if (!resendApiKey) {
     return NextResponse.json(
       { error: "Waitlist email service is not configured yet." },
       { status: 500 }

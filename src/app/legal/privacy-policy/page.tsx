@@ -1,13 +1,7 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-
 export default function PrivacyPolicy() {
   return (
-    <>
-      <Header />
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-4xl font-bold mb-8">Kontinue AI Privacy Policy</h1>
-      
+    <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <h1 className="text-4xl font-bold mb-8">Kontinue AI Privacy Policy</h1>
       <div className="space-y-6 text-muted-foreground">
         <p className="text-sm">
           <strong>Last Updated:</strong> February 10, 2026<br />
@@ -125,7 +119,5 @@ export default function PrivacyPolicy() {
         </section>
       </div>
     </div>
-      <Footer />
-    </>
   );
 }

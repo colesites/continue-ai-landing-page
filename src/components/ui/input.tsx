@@ -9,7 +9,7 @@ const inputVariants = cva(
     variants: {
       variant: {
         default: "",
-        glass: "glass focus-visible:bg-white/10",
+        glass: "glass focus-visible:bg-accent/45",
       },
     },
     defaultVariants: {

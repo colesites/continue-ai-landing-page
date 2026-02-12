@@ -10,26 +10,49 @@ function format(value: number) {
 }
 
 interface WaitlistCountdownProps {
-  targetDate: string;
+  startDate: string;
+  durationDays?: number;
 }
 
-export function WaitlistCountdown({ targetDate }: WaitlistCountdownProps) {
-  const target = useMemo(() => {
-    return new Date(targetDate).getTime();
-  }, [targetDate]);
+export function WaitlistCountdown({
+  startDate,
+  durationDays = 60,
+}: WaitlistCountdownProps) {
+  const start = useMemo(() => {
+    return new Date(startDate).getTime();
+  }, [startDate]);
+  const durationMs = durationDays * DAY;
 
-  const [timeLeft, setTimeLeft] = useState(Math.max(0, target - Date.now()));
+  const [timeLeft, setTimeLeft] = useState(() => {
+    if (!Number.isFinite(start)) {
+      return 0;
+    }
+    if (Date.now() < start) {
+      return durationMs;
+    }
+    return Math.max(0, start + durationMs - Date.now());
+  });
 
   useEffect(() => {
-    if (!Number.isFinite(target)) {
+    if (!Number.isFinite(start)) {
       setTimeLeft(0);
       return;
     }
+
     const interval = setInterval(() => {
-      setTimeLeft(Math.max(0, target - Date.now()));
+      const now = Date.now();
+
+      if (now < start) {
+        // Keep a fixed "60 days" display until the configured start date.
+        setTimeLeft(durationMs);
+        return;
+      }
+
+      setTimeLeft(Math.max(0, start + durationMs - now));
     }, 1000);
+
     return () => clearInterval(interval);
-  }, [target]);
+  }, [durationMs, start]);
 
   const days = Math.floor(timeLeft / DAY);
   const hours = Math.floor((timeLeft % DAY) / (1000 * 60 * 60));

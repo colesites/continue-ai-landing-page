@@ -22,7 +22,7 @@ const importSources = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32">
+    <section className="relative overflow-hidden bg-background pt-20 pb-24 md:pt-28 md:pb-32">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
           <motion.div
@@ -44,7 +44,7 @@ export function HeroSection() {
               transition={easeTransition}
             >
               All your AI models,
-              <span className="gradient-text"> one cockpit.</span>
+              <span className="text-primary"> one cockpit.</span>
             </motion.h1>
 
             <motion.p
@@ -126,7 +126,6 @@ export function HeroSection() {
             transition={{ ...easeTransition, delay: 0.3 }}
             className="relative"
           >
-            <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/15 blur-3xl opacity-70" />
             <div className="relative glass glow-border rounded-[2.5rem] p-5">
               <div className="flex items-center justify-between mb-4">
                 <div>
