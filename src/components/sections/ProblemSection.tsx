@@ -52,7 +52,7 @@ export function ProblemSection() {
               },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-4">
-                <div className="mt-2 size-2 rounded-full bg-gradient-to-r from-fuchsia-400 to-violet-400" />
+                <div className="mt-2 size-2 rounded-full bg-primary" />
                 <div>
                   <h3 className="font-display text-lg">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.text}</p>

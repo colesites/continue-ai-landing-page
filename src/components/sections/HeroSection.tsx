@@ -11,7 +11,7 @@ import {
   getAnimationConfig,
 } from "@/lib/animations";
 
-const models = [
+const importSources = [
   { name: "OpenAI", src: "/openai.svg", invert: true },
   { name: "Claude", src: "/claude-ai-icon.svg" },
   { name: "Gemini", src: "/gemini.svg" },
@@ -23,10 +23,6 @@ const models = [
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32">
-      <div className="orb -left-20 top-10 size-80 bg-fuchsia-500/30" />
-      <div className="orb right-[-8rem] top-[-4rem] size-[28rem] bg-violet-500/30" />
-      <div className="orb bottom-[-10rem] left-1/2 size-[32rem] -translate-x-1/2 bg-indigo-500/20" />
-
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
           <motion.div
@@ -37,7 +33,7 @@ export function HeroSection() {
             <motion.div
               variants={getAnimationConfig(staggerItem)}
               transition={easeTransition}
-              className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-muted-foreground"
+              className="inline-flex items-center gap-3 rounded-full border border-border bg-card/60 px-4 py-2 text-xs uppercase tracking-[0.3em] text-muted-foreground"
             >
               Unified AI workspace
             </motion.div>
@@ -65,12 +61,12 @@ export function HeroSection() {
               variants={getAnimationConfig(staggerItem)}
               transition={easeTransition}
             >
-              <Button asChild size="lg" className="button-glow">
+              {/* <Button asChild size="lg" className="button-glow">
                 <Link href="https://chat.kontinueai.com/sign-up">Start free</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link href="https://chat.kontinueai.com/sign-in">Sign in</Link>
-              </Button>
+              </Button> */}
               <Button asChild variant="glass" size="lg">
                 <Link href="/waitlist">Join waitlist</Link>
               </Button>
@@ -99,13 +95,13 @@ export function HeroSection() {
               transition={easeTransition}
             >
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
-                Models inside Kontinue AI
+                Chats you can import
               </p>
               <div className="flex flex-wrap items-center gap-6">
-                {models.map((model) => (
+                {importSources.map((model) => (
                   <div
                     key={model.name}
-                    className="flex items-center justify-center rounded-full border border-white/10 bg-black/30 px-4 py-2"
+                    className="flex items-center justify-center rounded-full border border-border bg-card/70 px-4 py-2"
                   >
                     <img
                       src={model.src}
@@ -130,7 +126,7 @@ export function HeroSection() {
             transition={{ ...easeTransition, delay: 0.3 }}
             className="relative"
           >
-            <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-fuchsia-500/30 via-violet-500/20 to-indigo-500/30 blur-3xl opacity-70" />
+            <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/15 blur-3xl opacity-70" />
             <div className="relative glass glow-border rounded-[2.5rem] p-5">
               <div className="flex items-center justify-between mb-4">
                 <div>
@@ -144,7 +140,7 @@ export function HeroSection() {
                 </span>
               </div>
 
-              <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black/60">
+              <div className="relative aspect-video rounded-2xl overflow-hidden border border-border bg-card">
                 <video
                   controls
                   poster="/demo-poster.jpg"

@@ -1,5 +1,20 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Environment
+
+Create a `.env.local` file with:
+
+```bash
+RESEND_API_KEY=your_resend_api_key
+WAITLIST_NOTIFY_EMAIL=team@kontinueai.com
+WAITLIST_FROM_EMAIL=Kontinue AI <onboarding@resend.dev>
+NEXT_PUBLIC_WAITLIST_LAUNCH_AT=2026-04-13T00:00:00.000Z
+```
+
+- `WAITLIST_NOTIFY_EMAIL` receives new waitlist submissions.
+- `WAITLIST_FROM_EMAIL` should be a verified sender in Resend for production.
+- `NEXT_PUBLIC_WAITLIST_LAUNCH_AT` is the fixed countdown target on `/waitlist`.
+
 ## Getting Started
 
 First, run the development server:

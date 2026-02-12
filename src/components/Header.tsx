@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
 
 export function Header() {
@@ -10,7 +10,14 @@ export function Header() {
         <div className="glass glow-border rounded-full px-6 py-3">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 font-display text-lg">
-              <span className="size-2 rounded-full bg-gradient-to-r from-fuchsia-400 to-violet-400 shadow-[0_0_12px_rgba(210,104,255,0.8)]" />
+              <Image
+                src="/kontinue-ai.svg"
+                alt="Kontinue AI logo"
+                width={26}
+                height={26}
+                className="size-6 rounded-md object-cover"
+                priority
+              />
               <span>Kontinue AI</span>
             </Link>
 
@@ -32,7 +39,7 @@ export function Header() {
               </Link>
             </nav>
 
-            <div className="flex items-center gap-3">
+            {/* <div className="flex items-center gap-3">
               <Link
                 href="https://chat.kontinueai.com/sign-in"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -42,7 +49,7 @@ export function Header() {
               <Button asChild size="sm" className="button-glow">
                 <Link href="https://chat.kontinueai.com/sign-up">Sign up</Link>
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

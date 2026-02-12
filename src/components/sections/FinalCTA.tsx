@@ -26,9 +26,9 @@ export function FinalCTA() {
             Bring your chats. Switch models. Pay once.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="button-glow">
+            {/* <Button asChild size="lg" className="button-glow">
               <Link href="https://chat.kontinueai.com/sign-up">Start free</Link>
-            </Button>
+            </Button> */}
             <Button asChild variant="outline" size="lg">
               <Link href="/waitlist">Join waitlist</Link>
             </Button>

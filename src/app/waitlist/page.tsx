@@ -2,9 +2,12 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WaitlistCountdown } from "@/components/sections/WaitlistCountdown";
+import { WaitlistForm } from "@/components/sections/WaitlistForm";
 import { Button } from "@/components/ui/button";
 
 export default function WaitlistPage() {
+  const launchDate = process.env.NEXT_PUBLIC_WAITLIST_LAUNCH_AT || "2026-04-13T00:00:00.000Z";
+
   return (
     <>
       <Header />
@@ -15,21 +18,29 @@ export default function WaitlistPage() {
               Kontinue AI waitlist
             </p>
             <h1 className="mt-6 font-display text-4xl md:text-6xl">
-              The unified AI workspace launches in 60 days.
+              The unified AI workspace launches soon.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
               We&apos;re opening a limited early access wave. Get the invite, share feedback,
               and shape the product before the public release.
             </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Launch target: {new Date(launchDate).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
 
             <div className="mt-10">
-              <WaitlistCountdown />
+              <WaitlistCountdown targetDate={launchDate} />
             </div>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="button-glow">
-                <Link href="https://chat.kontinueai.com/sign-up">Join waitlist</Link>
-              </Button>
+            <div className="mt-10">
+              <WaitlistForm />
+            </div>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button asChild variant="outline" size="lg">
                 <Link href="/">Back to home</Link>
               </Button>

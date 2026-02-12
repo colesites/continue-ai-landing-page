@@ -3,19 +3,19 @@ import { Syne, Urbanist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const display = Syne({
-  variable: "--font-display",
+  variable: "--font-ui-display",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
 const body = Urbanist({
-  variable: "--font-body",
+  variable: "--font-ui-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
 const mono = JetBrains_Mono({
-  variable: "--font-mono",
+  variable: "--font-ui-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
@@ -36,18 +36,10 @@ export const metadata: Metadata = {
   keywords: [
     "Kontinue AI",
     "kontinueai",
-    "AI chat workspace",
     "multi-model AI",
     "AI model switcher",
     "AI chat import",
     "ChatGPT import",
-    "Claude",
-    "Gemini",
-    "Perplexity",
-    "Mistral",
-    "T3 Chat",
-    "AI subscriptions",
-    "AI comparison",
   ],
   openGraph: {
     title: siteTitle,
@@ -70,6 +62,11 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     images: ["/og.svg"],
+  },
+  icons: {
+    icon: "/kontinue-ai.svg",
+    shortcut: "/kontinue-ai.svg",
+    apple: "/kontinue-ai.svg",
   },
   robots: {
     index: true,

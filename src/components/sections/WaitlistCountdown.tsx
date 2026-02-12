@@ -4,21 +4,27 @@ import { motion } from "motion/react";
 import { useEffect, useMemo, useState } from "react";
 
 const DAY = 1000 * 60 * 60 * 24;
-const COUNTDOWN_DAYS = 60;
 
 function format(value: number) {
   return value.toString().padStart(2, "0");
 }
 
-export function WaitlistCountdown() {
-  const target = useMemo(() => {
-    const now = Date.now();
-    return now + COUNTDOWN_DAYS * DAY;
-  }, []);
+interface WaitlistCountdownProps {
+  targetDate: string;
+}
 
-  const [timeLeft, setTimeLeft] = useState(target - Date.now());
+export function WaitlistCountdown({ targetDate }: WaitlistCountdownProps) {
+  const target = useMemo(() => {
+    return new Date(targetDate).getTime();
+  }, [targetDate]);
+
+  const [timeLeft, setTimeLeft] = useState(Math.max(0, target - Date.now()));
 
   useEffect(() => {
+    if (!Number.isFinite(target)) {
+      setTimeLeft(0);
+      return;
+    }
     const interval = setInterval(() => {
       setTimeLeft(Math.max(0, target - Date.now()));
     }, 1000);

@@ -4,13 +4,13 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
-  "relative flex flex-col gap-6 rounded-2xl border border-white/10 bg-white/5 text-card-foreground shadow-sm",
+  "relative flex flex-col gap-6 rounded-2xl border border-border bg-card/70 text-card-foreground shadow-sm",
   {
     variants: {
       variant: {
         default: "",
         glass: "glass glow-border card-glow",
-        elevated: "bg-white/10 border-white/20 shadow-xl",
+        elevated: "bg-card border-border shadow-xl",
       },
     },
     defaultVariants: {

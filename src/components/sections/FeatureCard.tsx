@@ -20,8 +20,8 @@ export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps
     >
       <Card variant="glass" className="h-full">
         <CardHeader className="pb-3">
-          <div className="mb-4 inline-flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-500/30 via-violet-500/30 to-indigo-500/30 text-primary shadow-lg">
-            <Icon className="size-5 text-white" />
+          <div className="mb-4 inline-flex size-12 items-center justify-center rounded-2xl bg-primary/15 text-primary shadow-lg shadow-primary/15">
+            <Icon className="size-5 text-primary" />
           </div>
           <CardTitle className="font-display text-xl">{title}</CardTitle>
         </CardHeader>

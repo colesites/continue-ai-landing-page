@@ -39,19 +39,30 @@ export function WaitlistForm() {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
-      // Simulate success
-      if (Math.random() > 0.1) {
-        setIsSubmitted(true);
-        setEmail("");
-        setUseCase("");
-      } else {
-        throw new Error("Failed to join waitlist");
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          useCase,
+        }),
+      });
+
+      const payload = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(payload.error || "Failed to join waitlist");
       }
+
+      setIsSubmitted(true);
+      setEmail("");
+      setUseCase("");
     } catch (err) {
-      setError("Something went wrong. Please try again.");
+      const message =
+        err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setError(message);
     } finally {
       setIsSubmitting(false);
     }
@@ -141,4 +152,3 @@ export function WaitlistForm() {
     </motion.div>
   );
 }
-

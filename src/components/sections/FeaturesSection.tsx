@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { FeatureCard } from "./FeatureCard";
-import { Sparkles, Zap, DollarSign } from "lucide-react";
+import { Sparkles, Zap, DollarSign, Mic, Brain, Video } from "lucide-react";
 import {
   fadeIn,
   staggerContainer,
@@ -31,6 +31,27 @@ const features = [
     title: "Spend less, get more",
     description:
       "A single Free plan + $5 Pro is usually cheaper than stacking subscriptions.",
+  },
+  {
+    id: "audio-any-language",
+    icon: Mic,
+    title: "Send audio in any language",
+    description:
+      "Record or upload voice notes in your preferred language and get accurate, context-aware responses.",
+  },
+  {
+    id: "ai-emotional-intelligence",
+    icon: Brain,
+    title: "AI + Emotional Intelligence",
+    description:
+      "Get responses that understand tone, intent, and emotional context for more human, helpful conversations.",
+  },
+  {
+    id: "generate-video",
+    icon: Video,
+    title: "Generate video",
+    description:
+      "Turn ideas, scripts, or prompts into ready-to-share videos directly inside your workflow.",
   },
 ];
 

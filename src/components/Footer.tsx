@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
@@ -6,7 +7,16 @@ export function Footer() {
       <div className="container mx-auto">
         <div className="grid gap-10 md:grid-cols-4">
           <div>
-            <h3 className="font-display text-xl mb-4">Kontinue AI</h3>
+            <div className="mb-4 flex items-center gap-3">
+              <Image
+                src="/kontinue-ai.svg"
+                alt="Kontinue AI logo"
+                width={24}
+                height={24}
+                className="size-6 rounded-md object-cover"
+              />
+              <h3 className="font-display text-xl">Kontinue AI</h3>
+            </div>
             <p className="text-sm text-muted-foreground">
               All your AI chats. One workspace. One plan.
             </p>
