@@ -19,8 +19,10 @@ export async function POST(request: Request) {
   const notifyEmail = process.env.WAITLIST_NOTIFY_EMAIL || "waitlist@kontinueai.com";
   const fromEmail =
     process.env.WAITLIST_FROM_EMAIL || "Kontinue AI <waitlist@kontinueai.com>";
+  const audienceId = process.env.RESEND_AUDIENCE_ID;
+  const segmentId = process.env.RESEND_SEGMENT_ID;
 
-  if (!resendApiKey) {
+  if (!resendApiKey || (!segmentId && !audienceId)) {
     return NextResponse.json(
       { error: "Waitlist email service is not configured yet." },
       { status: 500 }
@@ -45,6 +47,20 @@ export async function POST(request: Request) {
   const resend = new Resend(resendApiKey);
 
   try {
+    if (segmentId) {
+      await resend.contacts.create({
+        email,
+        unsubscribed: false,
+        segments: [{ id: segmentId }],
+      });
+    } else {
+      await resend.contacts.create({
+        audienceId: audienceId as string,
+        email,
+        unsubscribed: false,
+      });
+    }
+
     await resend.emails.send({
       from: fromEmail,
       to: [notifyEmail],
