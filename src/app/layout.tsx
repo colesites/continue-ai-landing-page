@@ -48,10 +48,11 @@ export const metadata: Metadata = {
     siteName: "Kontinue AI",
     images: [
       {
-        url: "/og.svg",
+        url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Kontinue AI — One workspace for every AI model",
+        alt: "Kontinue AI logo",
+        type: "image/png",
       },
     ],
     locale: "en_US",
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/og.svg"],
+    images: ["/og.png"],
   },
   icons: {
     icon: "/kontinue-ai.svg",
