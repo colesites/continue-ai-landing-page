@@ -6,7 +6,7 @@ export default function TermsOfService() {
     <>
       <Header />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-4xl font-bold mb-8">Continue AI Terms of Service</h1>
+        <h1 className="text-4xl font-bold mb-8">Kontinue AI Terms of Service</h1>
       
       <div className="space-y-6 text-muted-foreground">
         <p className="text-sm">
@@ -16,7 +16,7 @@ export default function TermsOfService() {
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
           <p>
-            Welcome to Continue AI! These Terms of Service ("Terms") govern your use of our website at https://continue-ai.com (the "Site") and all related services, software, and applications (collectively, the "Services") provided by Continue AI ("we," "our," "us").
+            Welcome to Kontinue AI! These Terms of Service ("Terms") govern your use of our website at https://kontinueai.com (the "Site") and all related services, software, and applications (collectively, the "Services") provided by Kontinue AI ("we," "our," "us").
           </p>
           <p className="mt-4">
             By using our Services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our Services.
@@ -29,7 +29,7 @@ export default function TermsOfService() {
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-4">2. Description of Services</h2>
           <p>
-            Continue AI provides a platform that allows you to:
+            Kontinue AI provides a platform that allows you to:
           </p>
           <ul className="list-disc pl-6 space-y-2 mt-2">
             <li>Import conversations from various AI chat platforms (ChatGPT, Claude, Gemini, Perplexity, Mistral, T3 Chat, etc.)</li>
@@ -111,7 +111,7 @@ export default function TermsOfService() {
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-4">7. Intellectual Property</h2>
           <p>
-            The Services, including all software, designs, text, graphics, logos, and other content (excluding User Content), are owned by Continue AI and protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works without our permission.
+            The Services, including all software, designs, text, graphics, logos, and other content (excluding User Content), are owned by Kontinue AI and protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works without our permission.
           </p>
         </section>
 
@@ -155,7 +155,7 @@ export default function TermsOfService() {
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-4">12. Indemnification</h2>
           <p>
-            You agree to indemnify and hold harmless Continue AI from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of the Services, your User Content, or your violation of these Terms.
+            You agree to indemnify and hold harmless Kontinue AI from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of the Services, your User Content, or your violation of these Terms.
           </p>
         </section>
 
@@ -182,8 +182,8 @@ export default function TermsOfService() {
             If you have questions about these Terms, please contact us at:
           </p>
           <p className="mt-4">
-            <strong>Continue AI</strong><br />
-            Email: legal@continue-ai.com
+            <strong>Kontinue AI</strong><br />
+            Email: legal@kontinueai.com
           </p>
         </section>
       </div>

@@ -26,30 +26,26 @@ export function PricingSection({ tiers }: PricingSectionProps) {
   return (
     <section id="pricing" className="py-24 px-4">
       <div className="container mx-auto">
-        {/* Section Title */}
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-4 gradient-text"
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-16"
           initial={getAnimationConfig(fadeIn.initial)}
           whileInView={getAnimationConfig(fadeIn.animate)}
           viewport={{ once: true, margin: "-100px" }}
           transition={easeTransition}
         >
-          Simple, Transparent Pricing
-        </motion.h2>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            Pricing
+          </p>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl">
+            One plan beats five subscriptions.
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg">
+            Transparent pricing that scales with the way you actually work.
+          </p>
+        </motion.div>
 
-        <motion.p
-          className="text-center text-muted-foreground mb-16 text-lg"
-          initial={getAnimationConfig(fadeIn.initial)}
-          whileInView={getAnimationConfig(fadeIn.animate)}
-          viewport={{ once: true }}
-          transition={easeTransition}
-        >
-          One plan instead of paying for multiple AI subscriptions.
-        </motion.p>
-
-        {/* Pricing Cards */}
         <motion.div
-          className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto"
+          className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto"
           variants={getAnimationConfig(staggerContainer)}
           initial="initial"
           whileInView="animate"
@@ -58,7 +54,7 @@ export function PricingSection({ tiers }: PricingSectionProps) {
           {tiers.map((tier, index) => (
             <motion.div
               key={tier.id}
-              className="w-full md:w-80"
+              className="w-full md:w-[22rem]"
               variants={getAnimationConfig({
                 initial: { opacity: 0, y: 20 },
                 animate: { opacity: 1, y: 0 },

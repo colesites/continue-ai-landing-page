@@ -1,28 +1,38 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { fadeIn, easeTransition, getAnimationConfig } from "@/lib/animations";
 
 export function FinalCTA() {
   return (
     <section className="py-24 px-4">
-      <div className="container mx-auto max-w-3xl text-center">
+      <div className="container mx-auto max-w-4xl">
         <motion.div
+          className="glass glow-border rounded-3xl p-10 md:p-14 text-center"
           initial={getAnimationConfig(fadeIn.initial)}
           whileInView={getAnimationConfig(fadeIn.animate)}
           viewport={{ once: true }}
           transition={easeTransition}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            Ready to consolidate
+          </p>
+          <h2 className="mt-4 font-display text-3xl md:text-5xl">
             Stop juggling AI subscriptions.
           </h2>
-          <p className="text-2xl text-muted-foreground mb-8">
+          <p className="mt-4 text-lg text-muted-foreground">
             Bring your chats. Switch models. Pay once.
           </p>
-          <Button size="lg" className="text-lg px-8">
-            Start free
-          </Button>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg" className="button-glow">
+              <Link href="https://chat.kontinueai.com/sign-up">Start free</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/waitlist">Join waitlist</Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

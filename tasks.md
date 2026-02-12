@@ -1,8 +1,8 @@
-# Implementation Plan: Continue AI Landing Page
+# Implementation Plan: Kontinue AI Landing Page
 
 ## Overview
 
-This implementation plan breaks down the Continue AI landing page into discrete, incremental coding tasks. The approach follows a bottom-up strategy: first installing dependencies and setting up the foundation, then building individual section components, and finally integrating everything into the main landing page. Each task builds on previous work to ensure no orphaned code.
+This implementation plan breaks down the Kontinue AI landing page into discrete, incremental coding tasks. The approach follows a bottom-up strategy: first installing dependencies and setting up the foundation, then building individual section components, and finally integrating everything into the main landing page. Each task builds on previous work to ensure no orphaned code.
 
 ## Tasks
 

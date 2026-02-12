@@ -8,17 +8,16 @@ const faqs = [
   {
     question: "Can I really import chats from different AI apps?",
     answer:
-      "Yes — Continue AI lets you bring your existing conversations into one workspace.",
+      "Yes — Kontinue AI lets you bring your existing conversations into one workspace.",
   },
   {
     question: "Do I need separate subscriptions for each model?",
-    answer:
-      "No. Continue AI is built so you can use different models in one place.",
+    answer: "No. Kontinue AI is built so you can use different models in one place.",
   },
   {
     question: "How does it help with hallucinations?",
     answer:
-      "You can cross-check the same prompt across models quickly and compare results.",
+      "Cross-check the same prompt across models quickly and compare results side-by-side.",
   },
   {
     question: "Is Pro really $5?",
@@ -31,15 +30,20 @@ export function FAQSection() {
   return (
     <section id="faq" className="py-24 px-4">
       <div className="container mx-auto max-w-4xl">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text"
+        <motion.div
+          className="text-center mb-14"
           initial={getAnimationConfig(fadeIn.initial)}
           whileInView={getAnimationConfig(fadeIn.animate)}
           viewport={{ once: true }}
           transition={easeTransition}
         >
-          FAQ
-        </motion.h2>
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            FAQ
+          </p>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl">
+            Answers without the fluff
+          </h2>
+        </motion.div>
 
         <motion.div
           className="space-y-6"
@@ -50,19 +54,19 @@ export function FAQSection() {
         >
           {faqs.map((faq, index) => (
             <motion.div
-              key={index}
+              key={faq.question}
               variants={getAnimationConfig({
                 initial: { opacity: 0, y: 20 },
                 animate: { opacity: 1, y: 0 },
               })}
-              transition={{ ...easeTransition, delay: index * 0.1 }}
+              transition={{ ...easeTransition, delay: index * 0.08 }}
             >
-              <Card>
+              <Card variant="glass">
                 <CardHeader>
-                  <CardTitle className="text-lg">{faq.question}</CardTitle>
+                  <CardTitle className="text-lg font-display">{faq.question}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{faq.answer}</p>
+                  <p className="text-sm text-muted-foreground">{faq.answer}</p>
                 </CardContent>
               </Card>
             </motion.div>

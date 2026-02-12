@@ -7,7 +7,7 @@ export const pricingTiers: PricingTier[] = [
     price: "$0",
     period: "month",
     features: [
-      "Try Continue AI",
+      "Try Kontinue AI",
       "Limited chats/messages",
       "Import supported chats",
       "Basic model access",

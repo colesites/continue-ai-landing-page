@@ -14,23 +14,19 @@ interface FeatureCardProps {
 export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (
     <motion.div
-      whileHover={getAnimationConfig({
-        scale: 1.05,
-        rotateY: 5,
-        rotateX: 5,
-      })}
+      whileHover={getAnimationConfig({ scale: 1.03, y: -6 })}
       transition={{ duration: 0.3 }}
       className="h-full"
     >
       <Card variant="glass" className="h-full">
-        <CardHeader>
-          <div className="mb-4 p-3 rounded-lg glass-light w-fit">
-            <Icon className="size-6 text-primary" />
+        <CardHeader className="pb-3">
+          <div className="mb-4 inline-flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-500/30 via-violet-500/30 to-indigo-500/30 text-primary shadow-lg">
+            <Icon className="size-5 text-white" />
           </div>
-          <CardTitle>{title}</CardTitle>
+          <CardTitle className="font-display text-xl">{title}</CardTitle>
         </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">{description}</p>
+        <CardContent className="text-sm text-muted-foreground leading-relaxed">
+          {description}
         </CardContent>
       </Card>
     </motion.div>

@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
     <>
       <Header />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-4xl font-bold mb-8">Continue AI Privacy Policy</h1>
+        <h1 className="text-4xl font-bold mb-8">Kontinue AI Privacy Policy</h1>
       
       <div className="space-y-6 text-muted-foreground">
         <p className="text-sm">
@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
           <p>
-            This privacy policy ("Policy") describes how Continue AI ("Company", "we", "us") collects, uses, and shares personal information of users of this website, https://continue-ai.com (the "Site"), as well as associated products and services (together, the "Services"). This Policy applies to personal information that we collect through the Site and our Services as well as personal information you provide to us directly.
+            This privacy policy ("Policy") describes how Kontinue AI ("Company", "we", "us") collects, uses, and shares personal information of users of this website, https://kontinueai.com (the "Site"), as well as associated products and services (together, the "Services"). This Policy applies to personal information that we collect through the Site and our Services as well as personal information you provide to us directly.
           </p>
           <p className="mt-4">
             By using the Site or the Services, you accept the practices and policies described in this Policy and you consent that we will collect, use, and share your personal information as described below. If you do not agree to this Policy, please do not use the Site or the Services.
@@ -119,8 +119,8 @@ export default function PrivacyPolicy() {
             If you have questions about this Privacy Policy, please contact us at:
           </p>
           <p className="mt-4">
-            <strong>Continue AI</strong><br />
-            Email: privacy@continue-ai.com
+            <strong>Kontinue AI</strong><br />
+            Email: privacy@kontinueai.com
           </p>
         </section>
       </div>

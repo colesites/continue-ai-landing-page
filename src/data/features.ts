@@ -7,7 +7,7 @@ export const coreValueProps: Feature[] = [
     icon: Sparkles,
     title: "Import everything",
     description:
-      "Move chats from the top AI apps into Continue AI — keep your history in one place.",
+      "Move chats from the top AI apps into Kontinue AI — keep your history in one place.",
   },
   {
     id: "use-any-model",

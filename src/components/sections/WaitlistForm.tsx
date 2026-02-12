@@ -69,7 +69,7 @@ export function WaitlistForm() {
           You're on the list!
         </h3>
         <p className="text-muted-foreground">
-          We'll notify you when Continue AI launches. Early users get Pro perks!
+          We'll notify you when Kontinue AI launches. Early users get Pro perks!
         </p>
       </motion.div>
     );
