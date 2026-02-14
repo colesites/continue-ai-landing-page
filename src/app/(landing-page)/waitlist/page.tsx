@@ -8,10 +8,13 @@ export default function WaitlistPage() {
     process.env.NEXT_PUBLIC_WAITLIST_START_AT ||
     process.env.NEXT_PUBLIC_WAITLIST_LAUNCH_AT ||
     "2026-04-13T00:00:00.000Z";
-  const countdownDays = Number(process.env.NEXT_PUBLIC_WAITLIST_COUNTDOWN_DAYS || "60");
-  const safeCountdownDays = Number.isFinite(countdownDays) && countdownDays > 0
-    ? Math.floor(countdownDays)
-    : 60;
+  const countdownDays = Number(
+    process.env.NEXT_PUBLIC_WAITLIST_COUNTDOWN_DAYS || "60"
+  );
+  const safeCountdownDays =
+    Number.isFinite(countdownDays) && countdownDays > 0
+      ? Math.floor(countdownDays)
+      : 60;
 
   return (
     <section className="relative overflow-hidden py-24 md:py-32 px-4">
@@ -23,19 +26,15 @@ export default function WaitlistPage() {
           The unified AI workspace launches soon.
         </h1>
         <p className="mt-6 text-lg text-muted-foreground">
-          We&apos;re opening a limited early access wave. Get the invite, share feedback,
-          and shape the product before the public release.
-        </p>
-        <p className="mt-3 text-sm text-muted-foreground">
-          Countdown starts: {new Date(waitlistStartAt).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })} ({safeCountdownDays} days)
+          We&apos;re opening a limited early access wave. Get the invite, share
+          feedback, and shape the product before the public release.
         </p>
 
         <div className="mt-10">
-          <WaitlistCountdown startDate={waitlistStartAt} durationDays={safeCountdownDays} />
+          <WaitlistCountdown
+            startDate={waitlistStartAt}
+            durationDays={safeCountdownDays}
+          />
         </div>
 
         <div className="mt-10">
