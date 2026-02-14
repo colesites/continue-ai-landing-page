@@ -6,10 +6,10 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "#features", label: "Features" },
-  { href: "#use-cases", label: "Use cases" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#features", label: "Features" },
+  { href: "/#use-cases", label: "Use cases" },
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/#faq", label: "FAQ" },
   { href: "/waitlist", label: "Waitlist" },
 ];
 
@@ -22,16 +22,15 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur">
       <div className="mx-auto w-full px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 font-display text-lg">
+          <Link href="/" className="flex items-center font-display text-lg">
             <Image
-              src="/kontinue-ai.svg"
+              src="/kontinueai.svg"
               alt="Kontinue AI logo"
-              width={26}
-              height={26}
-              className="size-6 rounded-md object-cover"
+              width={120}
+              height={32}
+              className="h-6 w-auto object-contain"
               priority
             />
-            <span>Kontinue AI</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8 text-sm text-muted-foreground">
@@ -60,12 +59,14 @@ export function Header() {
           {/* <div className="flex items-center gap-3">
             <Link
               href="https://chat.kontinueai.com/sign-in"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Sign in
             </Link>
             <Button asChild size="sm" className="button-glow">
-              <Link href="https://chat.kontinueai.com/sign-up">Sign up</Link>
+              <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer">Sign up</Link>
             </Button>
           </div> */}
         </div>

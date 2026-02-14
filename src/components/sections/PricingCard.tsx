@@ -58,7 +58,7 @@ export function PricingCard({
             ))}
           </ul>
           <Button asChild variant={highlighted ? "default" : "outline"} size="lg" className="w-full">
-            <Link href="https://chat.kontinueai.com/sign-up">Get started</Link>
+            <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer">Get started</Link>
           </Button>
         </CardContent>
       </Card>

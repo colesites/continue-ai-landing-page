@@ -62,10 +62,10 @@ export function HeroSection() {
               transition={easeTransition}
             >
               {/* <Button asChild size="lg" className="button-glow">
-                <Link href="https://chat.kontinueai.com/sign-up">Start free</Link>
+                <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer">Start free</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="https://chat.kontinueai.com/sign-in">Sign in</Link>
+                <Link href="https://chat.kontinueai.com/sign-in" target="_blank" rel="noopener noreferrer">Sign in</Link>
               </Button> */}
               <Button asChild variant="glass" size="lg">
                 <Link href="/waitlist">Join waitlist</Link>

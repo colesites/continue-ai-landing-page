@@ -65,9 +65,9 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   icons: {
-    icon: "/kontinue-ai.svg",
-    shortcut: "/kontinue-ai.svg",
-    apple: "/kontinue-ai.svg",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   robots: {
     index: true,

@@ -27,7 +27,7 @@ export function FinalCTA() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             {/* <Button asChild size="lg" className="button-glow">
-              <Link href="https://chat.kontinueai.com/sign-up">Start free</Link>
+              <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer">Start free</Link>
             </Button> */}
             <Button asChild variant="outline" size="lg">
               <Link href="/waitlist">Join waitlist</Link>

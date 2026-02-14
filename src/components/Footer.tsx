@@ -7,15 +7,14 @@ export function Footer() {
       <div className="container mx-auto">
         <div className="grid gap-10 md:grid-cols-4">
           <div>
-            <div className="mb-4 flex items-center gap-3">
+            <div className="mb-4">
               <Image
-                src="/kontinue-ai.svg"
+                src="/kontinueai.svg"
                 alt="Kontinue AI logo"
-                width={24}
-                height={24}
-                className="size-6 rounded-md object-cover"
+                width={120}
+                height={32}
+                className="h-6 w-auto object-contain"
               />
-              <h3 className="font-display text-xl">Kontinue AI</h3>
             </div>
             <p className="text-sm text-muted-foreground">
               All your AI chats. One workspace. One plan.
@@ -26,17 +25,17 @@ export function Footer() {
             <h4 className="text-sm font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#features" className="hover:text-foreground transition-colors">
+                <Link href="/#features" className="hover:text-foreground transition-colors">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="#use-cases" className="hover:text-foreground transition-colors">
+                <Link href="/#use-cases" className="hover:text-foreground transition-colors">
                   Use Cases
                 </Link>
               </li>
               <li>
-                <Link href="#pricing" className="hover:text-foreground transition-colors">
+                <Link href="/#pricing" className="hover:text-foreground transition-colors">
                   Pricing
                 </Link>
               </li>
@@ -47,7 +46,7 @@ export function Footer() {
             <h4 className="text-sm font-semibold mb-4">Support</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#faq" className="hover:text-foreground transition-colors">
+                <Link href="/#faq" className="hover:text-foreground transition-colors">
                   FAQ
                 </Link>
               </li>
