@@ -30,7 +30,7 @@ const features = [
     icon: DollarSign,
     title: "Spend less, get more",
     description:
-      "A single Free plan + $5 Pro is usually cheaper than stacking subscriptions.",
+      "A single Free plan + $8.99 Pro is usually cheaper than stacking subscriptions.",
   },
   {
     id: "audio-any-language",
@@ -73,7 +73,8 @@ export function FeaturesSection() {
             Your AI stack, finally unified.
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Kontinue AI keeps your conversations, models, and workflows together so you can move faster.
+            Kontinue AI keeps your conversations, models, and workflows together
+            so you can move faster.
           </p>
         </motion.div>
 

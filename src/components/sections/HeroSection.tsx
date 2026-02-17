@@ -52,8 +52,8 @@ export function HeroSection() {
               variants={getAnimationConfig(staggerItem)}
               transition={easeTransition}
             >
-              Import your conversations from the top AI apps, then switch models instantly to
-              compare answers, keep context, and pay for just one plan.
+              Import your conversations from top AI apps. Keep your context
+              alive. Kontinue without starting over.
             </motion.p>
 
             <motion.div
@@ -78,7 +78,7 @@ export function HeroSection() {
               transition={easeTransition}
             >
               {[
-                "Compare answers across models in one click",
+                "Kontinue conversations across models without losing context",
                 "Keep every chat history in one secure workspace",
                 "Swap models based on task, speed, or cost",
               ].map((item) => (
@@ -129,9 +129,11 @@ export function HeroSection() {
             <div className="relative glass glow-border rounded-[2.5rem] p-5">
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <h3 className="font-display text-lg">See Kontinue AI in 45 seconds</h3>
+                  <h3 className="font-display text-lg">
+                    See Kontinue AI in 45 seconds
+                  </h3>
                   <p className="text-sm text-muted-foreground">
-                    Import → organize → switch models → compare answers
+                    Import → organize → switch models → continue seamlessly
                   </p>
                 </div>
                 <span className="text-xs uppercase tracking-[0.2em] text-primary">

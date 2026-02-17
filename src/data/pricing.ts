@@ -16,7 +16,7 @@ export const pricingTiers: PricingTier[] = [
   {
     id: "pro",
     name: "Pro",
-    price: "$5",
+    price: "$8.99",
     period: "month",
     highlighted: true,
     features: [

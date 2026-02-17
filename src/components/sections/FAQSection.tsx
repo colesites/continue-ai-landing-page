@@ -2,7 +2,12 @@
 
 import { motion } from "motion/react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { fadeIn, staggerContainer, easeTransition, getAnimationConfig } from "@/lib/animations";
+import {
+  fadeIn,
+  staggerContainer,
+  easeTransition,
+  getAnimationConfig,
+} from "@/lib/animations";
 
 const faqs = [
   {
@@ -12,7 +17,8 @@ const faqs = [
   },
   {
     question: "Do I need separate subscriptions for each model?",
-    answer: "No. Kontinue AI is built so you can use different models in one place.",
+    answer:
+      "No. Kontinue AI is built so you can use different models in one place.",
   },
   {
     question: "How does it help with hallucinations?",
@@ -20,7 +26,7 @@ const faqs = [
       "Cross-check the same prompt across models quickly and compare results side-by-side.",
   },
   {
-    question: "Is Pro really $5?",
+    question: "Is Pro really $8.99?",
     answer:
       'Yes — Pro is designed to be the simple "one upgrade" instead of multiple subscriptions.',
   },
@@ -63,7 +69,9 @@ export function FAQSection() {
             >
               <Card variant="glass">
                 <CardHeader>
-                  <CardTitle className="text-lg font-display">{faq.question}</CardTitle>
+                  <CardTitle className="text-lg font-display">
+                    {faq.question}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{faq.answer}</p>
