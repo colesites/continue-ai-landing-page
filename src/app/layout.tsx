@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, Urbanist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const display = Syne({
   variable: "--font-ui-display",
@@ -93,6 +94,7 @@ export default function RootLayout({
       <body
         className={`${body.variable} ${display.variable} ${mono.variable} antialiased`}
       >
+        <GoogleTagManager gtmId={process.env.GTM || ""} />
         {children}
         <Analytics />
       </body>

@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { fadeIn, easeTransition, getAnimationConfig } from "@/lib/animations";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -63,7 +64,9 @@ export function WaitlistForm() {
       setUseCase("");
     } catch (err) {
       const message =
-        err instanceof Error ? err.message : "Something went wrong. Please try again.";
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.";
       setError(message);
     } finally {
       setIsSubmitting(false);
