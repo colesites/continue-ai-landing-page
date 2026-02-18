@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, Urbanist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const display = Syne({
   variable: "--font-ui-display",
@@ -93,6 +94,7 @@ export default function RootLayout({
         className={`${body.variable} ${display.variable} ${mono.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
