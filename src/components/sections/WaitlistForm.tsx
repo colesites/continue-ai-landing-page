@@ -19,6 +19,12 @@ const useCaseOptions = [
   "Just exploring",
 ];
 
+const trackJoinWaitlistSuccess = () => {
+  sendGTMEvent({
+    event: "join_waitlist_success",
+  });
+};
+
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [useCase, setUseCase] = useState("");
@@ -60,6 +66,7 @@ export function WaitlistForm() {
       }
 
       setIsSubmitted(true);
+      trackJoinWaitlistSuccess();
       setEmail("");
       setUseCase("");
     } catch (err) {
