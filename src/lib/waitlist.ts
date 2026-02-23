@@ -1,4 +1,3 @@
-// lib/waitlist.ts
 import * as Sentry from "@sentry/nextjs";
 
 export async function submitWaitlist(email: string, useCase: string) {
@@ -20,9 +19,13 @@ export async function submitWaitlist(email: string, useCase: string) {
         return { success: true };
     } catch (err) {
         Sentry.withScope((scope) => {
+            // ✅ Set high severity
+            scope.setLevel("fatal"); // or "error", "warning", "info"
+
             scope.setTag("feature", "waitlist_form");
             scope.setExtra("email", email);
             scope.setExtra("useCase", useCase);
+
             Sentry.captureException(err);
         });
 
