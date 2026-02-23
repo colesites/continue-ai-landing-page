@@ -1,14 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import type { SyntheticEvent } from "react";
 import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { fadeIn, easeTransition, getAnimationConfig } from "@/lib/animations";
-import { sendGTMEvent } from "@next/third-parties/google";
-
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { useWaitlist } from "@/hooks/useWaitlist";
 
 const useCaseOptions = [
   "Import chats and continue where I left off",
@@ -19,68 +16,16 @@ const useCaseOptions = [
   "Just exploring",
 ];
 
-const trackJoinWaitlistSuccess = () => {
-  sendGTMEvent({
-    event: "join_waitlist_success",
-  });
-};
-
 export function WaitlistForm() {
-  const [email, setEmail] = useState("");
-  const [useCase, setUseCase] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState("");
-
-  const validateEmail = (email: string): boolean => {
-    return EMAIL_REGEX.test(email);
-  };
+  const { email, setEmail, useCase, setUseCase, error, status, submit } =
+    useWaitlist();
 
   const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError("");
-
-    if (!validateEmail(email)) {
-      setError("Please enter a valid email address");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          useCase,
-        }),
-      });
-
-      const payload = (await response.json()) as { error?: string };
-
-      if (!response.ok) {
-        throw new Error(payload.error || "Failed to join waitlist");
-      }
-
-      setIsSubmitted(true);
-      trackJoinWaitlistSuccess();
-      setEmail("");
-      setUseCase("");
-    } catch (err) {
-      const message =
-        err instanceof Error
-          ? err.message
-          : "Something went wrong. Please try again.";
-      setError(message);
-    } finally {
-      setIsSubmitting(false);
-    }
+    await submit();
   };
 
-  if (isSubmitted) {
+  if (status === "success") {
     return (
       <motion.div
         className="glass p-8 rounded-xl max-w-md mx-auto text-center"
@@ -114,7 +59,7 @@ export function WaitlistForm() {
             onChange={(e) => setEmail(e.target.value)}
             variant="glass"
             className="text-base"
-            disabled={isSubmitting}
+            disabled={status === "loading"}
             aria-label="Email address"
             aria-invalid={!!error}
             required
@@ -136,7 +81,7 @@ export function WaitlistForm() {
             value={useCase}
             onChange={(e) => setUseCase(e.target.value)}
             className="w-full h-9 rounded-md border border-input bg-transparent px-3 text-sm glass focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
-            disabled={isSubmitting}
+            disabled={status === "loading"}
           >
             <option value="">What will you use it for? (optional)</option>
             {useCaseOptions.map((option) => (
@@ -152,9 +97,9 @@ export function WaitlistForm() {
           variant="default"
           size="lg"
           className="w-full"
-          disabled={isSubmitting}
+          disabled={status === "loading"}
         >
-          {isSubmitting ? "Joining..." : "Join waitlist"}
+          {status === "loading" ? "Joining..." : "Join waitlist"}
         </Button>
 
         <p className="text-xs text-muted-foreground text-center">
