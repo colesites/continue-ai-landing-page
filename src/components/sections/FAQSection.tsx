@@ -13,7 +13,7 @@ const faqs = [
   {
     question: "Can I really import chats from different AI apps?",
     answer:
-      "Yes — Kontinue AI lets you bring your existing conversations into one workspace.",
+      "Yes, Kontinue AI lets you bring your existing conversations into one workspace.",
   },
   {
     question: "Do I need separate subscriptions for each model?",
@@ -23,12 +23,12 @@ const faqs = [
   {
     question: "How does it help with hallucinations?",
     answer:
-      "Cross-check the same prompt across models quickly and compare results side-by-side.",
+      "Switch models in one click to verify answers. If one model misbehaves, you can continue the same chat with another provider to cross-check.",
   },
   {
-    question: "Is Pro really $8.99?",
+    question: "What does the pricing look like?",
     answer:
-      'Yes — Pro is designed to be the simple "one upgrade" instead of multiple subscriptions.',
+      "We offer three simple tiers: Free ($0) for getting started, Starter ($8.99) for more imports and power, and Pro ($50) for the ultimate AI workspace.",
   },
 ];
 

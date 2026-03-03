@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/sections/HeroSection";
+import { VideoSection } from "@/components/sections/VideoSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { UseCasesSection } from "@/components/sections/UseCasesSection";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <VideoSection />
       <ProblemSection />
       <FeaturesSection />
       <UseCasesSection useCases={useCases} />

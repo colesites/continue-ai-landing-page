@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
 import {
   staggerContainer,
   staggerItem,
@@ -11,156 +10,65 @@ import {
   getAnimationConfig,
 } from "@/lib/animations";
 
-const importSources = [
-  { name: "OpenAI", src: "/openai.svg", invert: true },
-  { name: "Claude", src: "/claude-ai-icon.svg" },
-  { name: "Gemini", src: "/gemini.svg" },
-  { name: "Perplexity", src: "/perplexity.svg" },
-  { name: "Mistral", src: "/mistral-ai_logo.svg" },
-  { name: "T3 Chat", src: "/t3chat.ico" },
-];
+import { IntegrationConnect } from "./IntegrationConnect";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-background pt-20 pb-24 md:pt-28 md:pb-32">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+    <section className="relative overflow-hidden bg-white pt-16 pb-24 md:pt-20 md:pb-32 lg:min-h-screen lg:flex lg:items-center">
+      {/* Hero glow effect */}
+      <div className="hero-glow" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          variants={getAnimationConfig(staggerContainer)}
+          initial="initial"
+          animate="animate"
+          className="flex flex-col items-center text-center"
+        >
+          {/* Integration Connect Component */}
           <motion.div
-            variants={getAnimationConfig(staggerContainer)}
-            initial="initial"
-            animate="animate"
+            variants={getAnimationConfig(staggerItem)}
+            transition={easeTransition}
+            className="w-full mb-8 md:mb-12"
           >
-            <motion.div
-              variants={getAnimationConfig(staggerItem)}
-              transition={easeTransition}
-              className="inline-flex items-center gap-3 rounded-full border border-border bg-card/60 px-4 py-2 text-xs uppercase tracking-[0.3em] text-muted-foreground"
-            >
-              Unified AI workspace
-            </motion.div>
-
-            <motion.h1
-              className="mt-6 font-display text-4xl md:text-6xl lg:text-7xl leading-tight"
-              variants={getAnimationConfig(staggerItem)}
-              transition={easeTransition}
-            >
-              All your AI models,
-              <span className="text-primary"> one cockpit.</span>
-            </motion.h1>
-
-            <motion.p
-              className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl"
-              variants={getAnimationConfig(staggerItem)}
-              transition={easeTransition}
-            >
-              Import your conversations from top AI apps. Keep your context
-              alive. Kontinue without starting over.
-            </motion.p>
-
-            <motion.div
-              className="mt-8 flex flex-wrap items-center gap-4"
-              variants={getAnimationConfig(staggerItem)}
-              transition={easeTransition}
-            >
-              {/* <Button asChild size="lg" className="button-glow">
-                <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer">Start free</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="https://chat.kontinueai.com/sign-in" target="_blank" rel="noopener noreferrer">Sign in</Link>
-              </Button> */}
-              <Button asChild variant="glass" size="lg">
-                <Link href="/waitlist">Join waitlist</Link>
-              </Button>
-            </motion.div>
-
-            <motion.div
-              className="mt-8 grid gap-3 text-sm text-muted-foreground"
-              variants={getAnimationConfig(staggerItem)}
-              transition={easeTransition}
-            >
-              {[
-                "Kontinue conversations across models without losing context",
-                "Keep every chat history in one secure workspace",
-                "Swap models based on task, speed, or cost",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2">
-                  <Check className="size-4 text-primary" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              className="mt-10"
-              variants={getAnimationConfig(staggerItem)}
-              transition={easeTransition}
-            >
-              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">
-                Chats you can import
-              </p>
-              <div className="flex flex-wrap items-center gap-6">
-                {importSources.map((model) => (
-                  <div
-                    key={model.name}
-                    className="flex items-center justify-center rounded-full border border-border bg-card/70 px-4 py-2"
-                  >
-                    <img
-                      src={model.src}
-                      alt={`${model.name} logo`}
-                      width={120}
-                      height={40}
-                      loading="lazy"
-                      decoding="async"
-                      className={`h-5 w-auto opacity-80 transition duration-300 hover:opacity-100 ${
-                        model.invert ? "invert" : ""
-                      }`}
-                    />
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+            <IntegrationConnect />
           </motion.div>
 
-          <motion.div
-            initial={getAnimationConfig({ opacity: 0, y: 30 })}
-            animate={getAnimationConfig({ opacity: 1, y: 0 })}
-            transition={{ ...easeTransition, delay: 0.3 }}
-            className="relative"
+          {/* Title */}
+          <motion.h1
+            className="font-display text-4xl md:text-5xl lg:text-6xl leading-tight text-gray-900 max-w-3xl"
+            variants={getAnimationConfig(staggerItem)}
+            transition={easeTransition}
           >
-            <div className="relative glass glow-border rounded-[2.5rem] p-5">
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h3 className="font-display text-lg">
-                    See Kontinue AI in 45 seconds
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Import → organize → switch models → continue seamlessly
-                  </p>
-                </div>
-                <span className="text-xs uppercase tracking-[0.2em] text-primary">
-                  Live demo
-                </span>
-              </div>
+            Never start from scratch
+            <br />
+            <span className="bg-linear-to-r from-violet-600 to-purple-500 bg-clip-text text-transparent">
+              again
+            </span>
+          </motion.h1>
 
-              <div className="relative aspect-video rounded-2xl overflow-hidden border border-border bg-card">
-                <video
-                  controls
-                  poster="/demo-poster.jpg"
-                  className="w-full h-full object-cover"
-                >
-                  <source
-                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
+          {/* Subtitle */}
+          <motion.p
+            className="mt-5 text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed font-medium"
+            variants={getAnimationConfig(staggerItem)}
+            transition={easeTransition}
+          >
+            Hit a limit? Import your chat and keep going. Kontinue AI brings
+            your conversations, context, and favourite models into one seamless
+            workspace.
+          </motion.p>
 
-              <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-                <span>No credit card required</span>
-                <span>Zero setup, instant import</span>
-              </div>
-            </div>
+          {/* CTA Button */}
+          <motion.div
+            className="mt-8"
+            variants={getAnimationConfig(staggerItem)}
+            transition={easeTransition}
+          >
+            <Button asChild size="lg" className="rounded-lg shadow-xl">
+              <Link href="/waitlist">Join Waitlist</Link>
+            </Button>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

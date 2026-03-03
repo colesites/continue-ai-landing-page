@@ -10,7 +10,7 @@ export function FinalCTA() {
     <section className="py-24 px-4">
       <div className="container mx-auto max-w-4xl">
         <motion.div
-          className="glass glow-border rounded-3xl p-10 md:p-14 text-center"
+          className="glass glow-border rounded-xl p-10 md:p-14 text-center"
           initial={getAnimationConfig(fadeIn.initial)}
           whileInView={getAnimationConfig(fadeIn.animate)}
           viewport={{ once: true }}
@@ -29,7 +29,7 @@ export function FinalCTA() {
             {/* <Button asChild size="lg" className="button-glow">
               <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer">Start free</Link>
             </Button> */}
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="rounded-xl">
               <Link href="/waitlist">Join waitlist</Link>
             </Button>
           </div>

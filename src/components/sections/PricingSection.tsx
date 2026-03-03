@@ -24,28 +24,29 @@ interface PricingSectionProps {
 
 export function PricingSection({ tiers }: PricingSectionProps) {
   return (
-    <section id="pricing" className="py-24 px-4">
-      <div className="container mx-auto">
+    <section id="pricing" className="py-24 md:py-32 px-4 bg-gray-50/20">
+      <div className="container mx-auto max-w-7xl">
         <motion.div
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-20"
           initial={getAnimationConfig(fadeIn.initial)}
           whileInView={getAnimationConfig(fadeIn.animate)}
           viewport={{ once: true, margin: "-100px" }}
           transition={easeTransition}
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          <span className="text-[10px] uppercase tracking-[0.4em] font-black text-violet-500 bg-violet-50 px-4 py-2 rounded-full mb-8 inline-block">
             Pricing
-          </p>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl">
-            One plan beats five subscriptions.
+          </span>
+          <h2 className="mt-6 font-display text-5xl md:text-7xl tracking-tightest leading-[1.1]">
+            One plan beats <br />
+            <span className="bg-linear-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
+              five subscriptions.
+            </span>
           </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
-            Transparent pricing that scales with the way you actually work.
-          </p>
         </motion.div>
 
+        {/* Professional 3rd one under layout (3-column grid in a 7xl container) */}
         <motion.div
-          className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto items-stretch"
           variants={getAnimationConfig(staggerContainer)}
           initial="initial"
           whileInView="animate"
@@ -54,9 +55,9 @@ export function PricingSection({ tiers }: PricingSectionProps) {
           {tiers.map((tier, index) => (
             <motion.div
               key={tier.id}
-              className="w-full md:w-[22rem]"
+              className="flex h-full w-full"
               variants={getAnimationConfig({
-                initial: { opacity: 0, y: 20 },
+                initial: { opacity: 0, y: 30 },
                 animate: { opacity: 1, y: 0 },
               })}
               transition={{ ...easeTransition, delay: index * 0.1 }}

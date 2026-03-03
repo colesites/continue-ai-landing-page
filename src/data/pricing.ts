@@ -1,4 +1,4 @@
-import { PricingTier } from "@/components/sections/PricingSection";
+import type { PricingTier } from "@/components/sections/PricingSection";
 
 export const pricingTiers: PricingTier[] = [
   {
@@ -9,22 +9,33 @@ export const pricingTiers: PricingTier[] = [
     features: [
       "Try Kontinue AI",
       "Limited chats/messages",
-      "Import supported chats",
+      "Fewer Imports",
       "Basic model access",
     ],
   },
   {
-    id: "pro",
-    name: "Pro",
+    id: "starter",
+    name: "Starter",
     price: "$8.99",
     period: "month",
     highlighted: true,
     features: [
       "Higher monthly limits",
-      "Full chat imports",
+      "Higher imports",
       "Access to more models",
-      "Faster experience + priority queue",
-      "Better organization tools",
+      "Image generation",
+    ],
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    price: "$50",
+    period: "month",
+    features: [
+      "Unlimited power",
+      "All models included",
+      "Image generation",
+      "Video generation",
     ],
   },
 ];
