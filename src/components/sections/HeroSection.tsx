@@ -14,7 +14,7 @@ import { IntegrationConnect } from "./IntegrationConnect";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white pt-16 pb-24 md:pt-20 md:pb-32 lg:min-h-screen lg:flex lg:items-center">
+    <section className="relative overflow-hidden bg-white pt-28 pb-24 md:pt-32 md:pb-32 lg:min-h-screen lg:flex lg:items-center">
       {/* Hero glow effect */}
       <div className="hero-glow" />
 
