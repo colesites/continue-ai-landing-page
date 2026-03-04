@@ -4,6 +4,13 @@ import type { SyntheticEvent } from "react";
 import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { fadeIn, easeTransition, getAnimationConfig } from "@/lib/animations";
 import { useWaitlist } from "@/hooks/useWaitlist";
 
@@ -17,7 +24,7 @@ const useCaseOptions = [
 ];
 
 export function WaitlistForm() {
-  const { email, setEmail, useCase, setUseCase, error, status, submit } =
+  const { email, setEmail, intent, setIntent, error, status, submit } =
     useWaitlist();
 
   const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
@@ -77,26 +84,29 @@ export function WaitlistForm() {
         </div>
 
         <div>
-          <select
-            value={useCase}
-            onChange={(e) => setUseCase(e.target.value)}
-            className="w-full h-9 rounded-md border border-input bg-transparent px-3 text-sm glass focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none"
+          <Select
+            value={intent}
+            onValueChange={setIntent}
             disabled={status === "loading"}
           >
-            <option value="">What will you use it for? (optional)</option>
-            {useCaseOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
+            <SelectTrigger className="w-full h-11 rounded-lg border border-input bg-transparent px-4 py-2 text-base md:text-sm glass focus-visible:border-violet-500 focus-visible:ring-violet-500/30 focus-visible:ring-[3px] outline-none">
+              <SelectValue placeholder="What will you use it for? (optional)" />
+            </SelectTrigger>
+            <SelectContent className="glass">
+              {useCaseOptions.map((option) => (
+                <SelectItem key={option} value={option}>
+                  {option}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
 
         <Button
           type="submit"
           variant="default"
           size="lg"
-          className="w-full"
+          className="w-full bg-violet-600 hover:bg-violet-700 text-white shadow-lg shadow-violet-200"
           disabled={status === "loading"}
         >
           {status === "loading" ? "Joining..." : "Join waitlist"}

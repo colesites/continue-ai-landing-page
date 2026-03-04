@@ -5,7 +5,7 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
@@ -17,19 +17,18 @@ const buttonVariants = cva(
           "border border-border bg-transparent text-foreground hover:bg-accent/40",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost:
-          "hover:bg-accent/30 hover:text-foreground",
+        ghost: "hover:bg-accent/30 hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         glass:
           "glass hover:bg-accent/40 hover:translate-y-[-1px] active:translate-y-0",
       },
       size: {
         default: "h-10 px-5 py-2 text-sm",
-        xs: "h-7 gap-1 rounded-full px-3 text-xs",
-        sm: "h-9 rounded-full gap-1.5 px-4 text-sm",
-        lg: "h-12 rounded-full px-7 text-base",
+        xs: "h-7 gap-1 rounded-md px-3 text-xs",
+        sm: "h-9 rounded-lg gap-1.5 px-4 text-sm",
+        lg: "h-12 rounded-lg px-7 text-base",
         icon: "size-10",
-        "icon-xs": "size-7 rounded-full",
+        "icon-xs": "size-7 rounded-lg",
         "icon-sm": "size-9",
         "icon-lg": "size-12",
       },
@@ -38,8 +37,8 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
-)
+  },
+);
 
 function Button({
   className,

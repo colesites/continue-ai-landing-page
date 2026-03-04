@@ -80,13 +80,14 @@ function FeatureSection({
                   src={image}
                   alt={headline}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
             )}
 
             {images && (
-              <div className="grid grid-cols-2 gap-2 p-2 bg-gray-50/50">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-2 bg-gray-50/50">
                 {images.map((img) => (
                   <div
                     key={img}
@@ -96,6 +97,7 @@ function FeatureSection({
                       src={img}
                       alt={`${headline} showcase`}
                       fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
@@ -114,6 +116,7 @@ function FeatureSection({
                       muted
                       loop
                       playsInline
+                      preload="auto"
                       className="w-full h-full object-cover"
                     />
                   ))}

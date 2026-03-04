@@ -8,7 +8,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function useWaitlist() {
     const [email, setEmail] = useState("");
-    const [useCase, setUseCase] = useState("");
+    const [intent, setIntent] = useState("");
     const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
     const [error, setError] = useState<string | null>(null);
 
@@ -25,13 +25,13 @@ export function useWaitlist() {
         setStatus("loading");
 
         try {
-            await submitWaitlist(email, useCase);
+            await submitWaitlist(email, intent);
 
             sendGTMEvent({ event: "join_waitlist_success" });
 
             setStatus("success");
             setEmail("");
-            setUseCase("");
+            setIntent("");
         } catch (err) {
             const message =
                 err instanceof Error
@@ -44,12 +44,12 @@ export function useWaitlist() {
     };
 
     return {
-        email,
-        setEmail,
-        useCase,
-        setUseCase,
-        error,
-        status,
-        submit,
+      email,
+      setEmail,
+      intent,
+      setIntent,
+      error,
+      status,
+      submit,
     };
 }

@@ -302,7 +302,13 @@ export default function TermsOfService() {
           <p className="mt-4">
             <strong>Kontinue AI</strong>
             <br />
-            Email: legal@kontinueai.com
+            Email:{" "}
+            <a
+              href="mailto:legal@kontinueai.com"
+              className="text-violet-600 hover:underline"
+            >
+              legal@kontinueai.com
+            </a>
           </p>
         </section>
       </div>

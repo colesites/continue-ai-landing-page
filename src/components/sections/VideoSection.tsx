@@ -32,18 +32,20 @@ export function VideoSection() {
           onClick={() => setIsOpen(true)}
         >
           {/* Main Preview Card */}
-          <div className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_48px_100px_-20px_rgba(0,0,0,0.15)] bg-gray-100 aspect-video">
+          <div className="relative rounded-4xl md:rounded-[3rem] overflow-hidden shadow-[0_48px_100px_-20px_rgba(0,0,0,0.15)] bg-gray-100 aspect-video">
             {/* Preview Background - Using a dimmed first frame if possible, or just a sleek gradient placeholder */}
             <div className="absolute inset-0 bg-linear-to-br from-gray-800 to-black flex items-center justify-center overflow-hidden">
-               {/* Video frame as a preview (muted, no autoplay) */}
-               <video
-                 src="/video.mp4"
-                 className="w-full h-full object-cover opacity-60 grayscale-[0.2]"
-                 preload="metadata"
-                 muted
-                 playsInline
-               />
-               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+              {/* Video frame as a preview (muted, no autoplay) */}
+              <video
+                src="/video.mp4"
+                className="w-full h-full object-cover opacity-60 grayscale-[0.2]"
+                preload="auto"
+                muted
+                playsInline
+              >
+                <track kind="captions" />
+              </video>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
             </div>
 
             {/* Play Button Overlay */}
@@ -66,32 +68,34 @@ export function VideoSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 md:p-8"
+            className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 backdrop-blur-sm p-2 sm:p-4 md:p-8"
             onClick={() => setIsOpen(false)}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-6xl aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black"
+              className="relative w-full max-w-6xl max-h-[90vh] rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl bg-black"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 z-110 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 z-110 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
                 type="button"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
 
               <video
                 src="/video.mp4"
-                className="w-full h-full"
+                className="w-full h-full max-h-[90vh] object-contain"
                 controls
                 autoPlay
                 playsInline
-              />
+              >
+                <track kind="captions" />
+              </video>
             </motion.div>
           </motion.div>
         )}
