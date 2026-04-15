@@ -62,7 +62,7 @@ export function Header() {
               Sign in
             </Link>
             <Button asChild size="sm" className="rounded-lg shadow-md">
-              <Link href="/waitlist">Join Waitlist</Link>
+              <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer">Sign up</Link>
             </Button>
           </div>
 
@@ -112,8 +112,8 @@ export function Header() {
               Sign in
             </Link>
             <Button asChild size="sm" className="mt-1">
-              <Link href="/waitlist" onClick={closeMobileMenu}>
-                Join Waitlist
+              <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
+                Sign up
               </Link>
             </Button>
           </nav>

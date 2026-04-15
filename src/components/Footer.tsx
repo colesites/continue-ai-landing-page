@@ -51,8 +51,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/waitlist" className="hover:text-foreground transition-colors">
-                  Waitlist
+                <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                  Sign up
                 </Link>
               </li>
               <li>

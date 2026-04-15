@@ -65,7 +65,7 @@ export function HeroSection() {
             transition={easeTransition}
           >
             <Button asChild size="lg" className="rounded-lg shadow-xl">
-              <Link href="/waitlist">Join Waitlist</Link>
+              <Link href="https://chat.kontinueai.com/sign-up" target="_blank" rel="noopener noreferrer">Sign up</Link>
             </Button>
           </motion.div>
         </motion.div>
